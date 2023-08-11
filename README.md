@@ -1,1 +1,4 @@
-# simple-spring-web-thymeleaf
+#Springboot
+#java 11
+#DB mysql
+#web thymeleaf
