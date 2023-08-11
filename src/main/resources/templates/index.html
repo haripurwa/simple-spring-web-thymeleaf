@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+<link th:href="@{css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+<link th:href="@{login/style.css}" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6 col-md-4 col-md-offset-4">
+			<h1 class="text-center login-title">LOGIN</h1>
+			<div class="account-wall">
+				<img class="profile-img" th:src="@{login/img.png}"/>
+				<form class="form-signin">
+					<label for="username">Username:</label>
+					<input type="text" id="username" name="username" required><br><br>
+
+					<label for="password">Password:</label>
+					<input type="password" id="password" name="password" required><br><br>
+
+					<a id="login-link" href="javascript:validateLogin()">Login</a>
+				</form>
+			</div>
+			<a href="#" class="text-center new-account">Create an account </a>
+		</div>
+	</div>
+</div>
+
+<script>
+	function validateLogin() {
+		var username = document.getElementById("username").value;
+		var password = document.getElementById("password").value;
+
+		if (username === "admin" && password === "mutiaraharapan") {
+			window.location = "[[@{/mahasiswa}]]";
+		} else {
+			alert("Invalid credentials. Please try again.");
+		}
+	}
+</script>
+</body>
+</html>
